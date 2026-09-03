@@ -1,0 +1,299 @@
+<title>Anika Agrawal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,680&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root{
+    --bg:#101113;
+    --bg-panel:#17181B;
+    --ink:#F5F1E8;
+    --ink-soft:#A7A79C;
+    --ink-faint:#67675E;
+    --border:#26272B;
+    --accent:#3E93FF;
+    --accent-ink:#08090B;
+    --gold:#E8B450;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{ background:var(--accent); color:var(--accent-ink); }
+  a{ color:inherit; }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:3px; }
+
+  .wrap{ max-width:1100px; margin:0 auto; padding:0 24px; position:relative; }
+
+  h1,h2,h3{ font-family:'Fraunces', Georgia, serif; text-wrap:balance; margin:0; letter-spacing:-0.01em; }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:12px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--gold);
+  }
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in-view{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+  /* ---------- nav ---------- */
+  nav.top{
+    position:sticky; top:0; z-index:40;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:20px 24px; backdrop-filter:blur(10px);
+    background:rgba(16,17,19,0.72); border-bottom:1px solid transparent;
+    transition:border-color .3s ease, background .3s ease;
+  }
+  nav.top.scrolled{ border-bottom-color:var(--border); }
+  .nav-inner{ max-width:1100px; margin:0 auto; width:100%; display:flex; justify-content:space-between; align-items:center; }
+  .wordmark{ font-family:'Fraunces', serif; font-weight:600; font-size:18px; text-decoration:none; }
+  .nav-links{ display:flex; align-items:center; gap:28px; }
+  .nav-links a{ font-size:13.5px; text-decoration:none; color:var(--ink-soft); transition:color .2s; }
+  .nav-links a:hover{ color:var(--ink); }
+  .nav-cta{
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px;
+    padding:9px 16px; border-radius:100px; border:1px solid var(--border);
+    text-decoration:none; color:var(--ink); transition:all .2s;
+  }
+  .nav-cta:hover{ border-color:var(--accent); color:var(--accent); }
+  @media (max-width:640px){ .nav-links a:not(.nav-cta){ display:none; } }
+
+  /* ---------- hero ---------- */
+  header.hero{ position:relative; padding:104px 0 84px; overflow:hidden; }
+  .blob{ position:absolute; border-radius:50%; filter:blur(70px); opacity:.35; pointer-events:none; }
+  .blob-a{ width:420px; height:420px; background:var(--accent); top:-160px; right:-100px; animation:drift1 26s ease-in-out infinite; }
+  .blob-b{ width:320px; height:320px; background:var(--gold); bottom:-140px; left:-80px; opacity:.18; animation:drift2 32s ease-in-out infinite; }
+  @keyframes drift1{ 0%,100%{ transform:translate(0,0) scale(1); } 50%{ transform:translate(-40px,50px) scale(1.15); } }
+  @keyframes drift2{ 0%,100%{ transform:translate(0,0) scale(1); } 50%{ transform:translate(50px,-30px) scale(1.1); } }
+  @media (prefers-reduced-motion: reduce){ .blob-a, .blob-b{ animation:none; } }
+
+  .hero h1{
+    font-size:clamp(38px, 6.4vw, 72px); font-weight:600; line-height:1.04;
+    max-width:16ch; position:relative;
+  }
+  .hero h1 em{ font-style:italic; color:var(--accent); }
+  .hero .role{ margin-top:22px; font-size:18px; color:var(--ink-soft); max-width:50ch; line-height:1.6; position:relative; }
+  .hero-actions{ display:flex; gap:14px; margin-top:36px; flex-wrap:wrap; position:relative; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:13px 22px; border-radius:100px;
+    font-size:14.5px; font-weight:500; text-decoration:none; transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn.primary{ background:var(--accent); color:var(--accent-ink); }
+  .btn.primary:hover{ transform:translateY(-2px); box-shadow:0 10px 30px -8px rgba(62,147,255,.55); }
+  .btn.ghost{ border:1px solid var(--border); color:var(--ink); }
+  .btn.ghost:hover{ border-color:var(--ink-soft); transform:translateY(-2px); }
+
+  /* ---------- marquee ---------- */
+  .marquee-shell{ border-top:1px solid var(--border); border-bottom:1px solid var(--border); overflow:hidden; padding:16px 0; }
+  .marquee{ display:flex; width:max-content; animation:scroll 26s linear infinite; }
+  @media (prefers-reduced-motion: reduce){ .marquee{ animation:none; } }
+  .marquee span{
+    font-family:'IBM Plex Mono', monospace; font-size:14px; color:var(--ink-faint);
+    padding:0 28px; white-space:nowrap; display:flex; align-items:center; gap:28px;
+  }
+  .marquee span::after{ content:'\2726'; color:var(--gold); font-size:10px; }
+  @keyframes scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+  /* ---------- section shell ---------- */
+  section{ padding:88px 0; border-bottom:1px solid var(--border); }
+  .section-label{ display:flex; align-items:baseline; gap:14px; margin-bottom:44px; }
+  .section-label .idx{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink-faint); }
+  .section-label h2{ font-size:30px; font-weight:600; }
+
+  /* ---------- work / case study ---------- */
+  .case-card{
+    background:var(--bg-panel); border:1px solid var(--border); border-radius:18px;
+    padding:44px; display:grid; grid-template-columns:1fr 1fr; gap:40px;
+    transition:border-color .25s ease, transform .25s ease;
+  }
+  .case-card:hover{ border-color:var(--accent); }
+  @media (max-width:760px){ .case-card{ grid-template-columns:1fr; padding:28px; } }
+  .case-card h3{ font-size:26px; font-weight:600; margin-bottom:10px; }
+  .case-card .kicker{ font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; display:block; }
+  .case-card p{ color:var(--ink-soft); font-size:15px; line-height:1.65; margin:0 0 20px; max-width:46ch; }
+  .case-card .tags{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px; }
+  .case-card .tag{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; border:1px solid var(--border); padding:5px 11px; border-radius:100px; color:var(--ink-soft); }
+  .case-card a.visit{ font-size:13.5px; color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; }
+  .case-card a.visit:hover{ border-color:var(--accent); }
+  .build-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; }
+  .build-list li{
+    padding:14px 0; border-top:1px solid var(--border); font-size:14px; color:var(--ink-soft);
+    display:flex; gap:12px; align-items:flex-start;
+  }
+  .build-list li:first-child{ border-top:none; }
+  .build-list li::before{ content:'\2192'; color:var(--gold); flex:none; }
+  .build-list strong{ color:var(--ink); font-weight:500; }
+
+  /* ---------- services ---------- */
+  .services{ display:grid; grid-template-columns:repeat(2, 1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:18px; overflow:hidden; }
+  @media (max-width:700px){ .services{ grid-template-columns:1fr; } }
+  .svc{ background:var(--bg); padding:34px 32px; transition:background .25s ease; position:relative; }
+  .svc:hover{ background:var(--bg-panel); }
+  .svc .num{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-faint); }
+  .svc h3{ font-size:20px; font-weight:600; margin:14px 0 10px; transition:color .2s; }
+  .svc:hover h3{ color:var(--accent); }
+  .svc p{ font-size:14px; color:var(--ink-soft); line-height:1.6; margin:0; max-width:38ch; }
+
+  /* ---------- about ---------- */
+  .about-grid{ display:grid; grid-template-columns:1.3fr 1fr; gap:56px; align-items:start; }
+  @media (max-width:760px){ .about-grid{ grid-template-columns:1fr; gap:36px; } }
+  .about-grid p{ font-size:17px; line-height:1.75; color:var(--ink-soft); margin:0 0 18px; max-width:56ch; }
+  .about-grid p strong{ color:var(--ink); font-weight:500; }
+  .stat-list{ display:flex; flex-direction:column; }
+  .stat-list .stat{ padding:18px 0; border-top:1px solid var(--border); }
+  .stat-list .stat:first-child{ border-top:none; }
+  .stat-list .k{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint); }
+  .stat-list .v{ font-size:15.5px; margin-top:6px; }
+
+  /* ---------- contact ---------- */
+  footer{ padding:100px 0 64px; text-align:center; border-bottom:none; }
+  footer h2{ font-size:clamp(32px, 6vw, 56px); font-weight:600; max-width:18ch; margin:0 auto; }
+  footer .sub{ color:var(--ink-soft); font-size:16px; margin:18px auto 36px; max-width:44ch; line-height:1.6; }
+  .contact-row{ display:flex; justify-content:center; gap:14px; flex-wrap:wrap; }
+  .fine{ margin-top:64px; font-size:12px; color:var(--ink-faint); font-family:'IBM Plex Mono', monospace; }
+
+  /* pinned cta */
+  .pin-cta{
+    position:fixed; right:22px; bottom:22px; z-index:50;
+    background:var(--accent); color:var(--accent-ink); text-decoration:none;
+    font-size:13px; font-weight:500; padding:12px 18px; border-radius:100px;
+    box-shadow:0 12px 30px -10px rgba(62,147,255,.6);
+    display:flex; align-items:center; gap:8px; transition:transform .2s ease;
+  }
+  .pin-cta:hover{ transform:translateY(-2px) scale(1.02); }
+  @media (max-width:560px){ .pin-cta{ right:14px; bottom:14px; padding:11px 16px; font-size:12.5px; } }
+</style>
+
+<nav class="top" id="topnav">
+  <div class="nav-inner">
+    <a class="wordmark" href="#top">Anika Agrawal</a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a class="nav-cta" href="#contact">Let's talk</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="blob blob-a"></div>
+  <div class="blob blob-b"></div>
+  <div class="wrap">
+    <p class="eyebrow reveal">Performance marketing &amp; digital execution &mdash; India</p>
+    <h1 class="reveal">I build the <em>ads &amp; sites</em><br>your brand actually needs.</h1>
+    <p class="role reveal">Meta &amp; Google Ads, hands-on with ChatGPT Ads from week one in India, plus websites and presentations &mdash; built and run by one person, end to end.</p>
+    <div class="hero-actions reveal">
+      <a class="btn primary" href="#contact">Start a project</a>
+      <a class="btn ghost" href="#work">See the work</a>
+    </div>
+  </div>
+</header>
+
+<div class="marquee-shell">
+  <div class="marquee">
+    <span>Meta Ads</span><span>Google Ads</span><span>ChatGPT Ads</span><span>Web Development</span><span>Presentation Design</span>
+    <span>Meta Ads</span><span>Google Ads</span><span>ChatGPT Ads</span><span>Web Development</span><span>Presentation Design</span>
+  </div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-label reveal"><span class="idx">01</span><h2>Work</h2></div>
+
+    <div class="case-card reveal">
+      <div>
+        <span class="kicker">Case study &mdash; 01</span>
+        <h3>Anika Agrawal &mdash; Portfolio</h3>
+        <p>The site you're looking at right now. Designed and built from a blank page to launch my freelance practice &mdash; not a template, not a builder.</p>
+        <div class="tags">
+          <span class="tag">Web Development</span>
+          <span class="tag">Design</span>
+          <span class="tag">Live on GitHub Pages</span>
+        </div>
+        <a class="visit" href="#top">Scroll back to the top &uarr;</a>
+      </div>
+      <ul class="build-list">
+        <li><strong>Content &amp; structure</strong> &mdash; wrote and organized every section myself</li>
+        <li><strong>Visual system</strong> &mdash; type scale, color, spacing built from scratch</li>
+        <li><strong>Motion</strong> &mdash; scroll reveals, marquee, hover states, all hand-coded</li>
+        <li><strong>Responsive build</strong> &mdash; works cleanly from phone to desktop</li>
+        <li><strong>Shipped</strong> &mdash; live and deployed, not a mockup</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-label reveal"><span class="idx">02</span><h2>What I do</h2></div>
+    <div class="services reveal">
+      <div class="svc"><span class="num">01</span><h3>Meta Ads</h3><p>Campaign setup, audience targeting, creative testing and weekly reporting for small business &amp; D2C accounts.</p></div>
+      <div class="svc"><span class="num">02</span><h3>Google Ads</h3><p>Search campaigns that show up when people are already looking for what you sell.</p></div>
+      <div class="svc"><span class="num">03</span><h3>ChatGPT Ads</h3><p>Advertising inside ChatGPT &mdash; brand new in India, and I'm learning it hands-on from the week it opened.</p></div>
+      <div class="svc"><span class="num">04</span><h3>Web Development</h3><p>Fast, clean one-page and small business sites &mdash; built, deployed, and handed over.</p></div>
+      <div class="svc"><span class="num">05</span><h3>Presentation Design</h3><p>Pitch decks and sales decks built to make the argument, not just look nice.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-label reveal"><span class="idx">03</span><h2>About</h2></div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p><strong>I'm Anika</strong> &mdash; based in India, building a freelance practice around performance marketing and web execution. I care more about whether a campaign actually gets someone to buy than about vanity numbers.</p>
+        <p>Right now I'm working through Google's Search Ads certification, going hands-on with Meta campaigns using my own budget, and getting into ChatGPT Ads the same week it opened up to Indian businesses &mdash; because the best way to learn a platform is to actually spend money in it.</p>
+      </div>
+      <div class="stat-list reveal">
+        <div class="stat"><div class="k">Based in</div><div class="v">India</div></div>
+        <div class="stat"><div class="k">Focus</div><div class="v">Meta &middot; Google &middot; ChatGPT Ads</div></div>
+        <div class="stat"><div class="k">Also</div><div class="v">Websites &amp; presentation design</div></div>
+        <div class="stat"><div class="k">Working style</div><div class="v">One client, full attention</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2 class="reveal">Got a brand worth growing?</h2>
+    <p class="sub reveal">Tell me what you're trying to build or sell &mdash; I'll reply with honest thoughts, not a template pitch.</p>
+    <div class="contact-row reveal">
+      <a class="btn primary" href="mailto:anikaagrawal073@gmail.com">anikaagrawal073@gmail.com</a>
+    </div>
+    <p class="fine">Anika Agrawal &middot; Performance marketing &amp; digital execution &middot; India &middot; Updated September 2026</p>
+  </div>
+</footer>
+
+<a class="pin-cta" href="#contact">Let's talk &rarr;</a>
+
+<script>
+  // sticky nav background on scroll
+  const nav = document.getElementById('topnav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 12);
+  }, { passive: true });
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in-view'));
+  }
+</script>
