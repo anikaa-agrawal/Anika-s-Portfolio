@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Manifesto - Lead Generation Case Study | Anika Agrawal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,680&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root{
+    --bg:#101113;
+    --bg-panel:#17181B;
+    --ink:#F5F1E8;
+    --ink-soft:#A7A79C;
+    --ink-faint:#67675E;
+    --border:#26272B;
+    --accent:#3E93FF;
+    --accent-ink:#08090B;
+    --gold:#E8B450;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:inherit; }
+  .wrap{ max-width:1100px; margin:0 auto; padding:0 24px; }
+  h1,h2,h3{ font-family:'Fraunces', Georgia, serif; margin:0; }
+  .eyebrow{ font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); }
+
+  nav.top{
+    position:sticky; top:0; z-index:40;
+    display:flex; justify-content:center; align-items:center;
+    padding:20px 24px; backdrop-filter:blur(10px);
+    background:rgba(16,17,19,0.82); border-bottom:1px solid var(--border);
+  }
+  .nav-inner{ max-width:1100px; margin:0 auto; width:100%; display:flex; justify-content:space-between; align-items:center; }
+  .wordmark{ font-family:'Fraunces', serif; font-weight:600; font-size:18px; text-decoration:none; }
+  .back-link{
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px;
+    padding:9px 16px; border-radius:100px; border:1px solid var(--border);
+    text-decoration:none; color:var(--ink); transition:all .2s;
+  }
+  .back-link:hover{ border-color:var(--accent); color:var(--accent); }
+
+  header.hero{ padding:72px 0 48px; border-bottom:1px solid var(--border); }
+  .hero h1{ font-size:clamp(32px, 5vw, 48px); font-weight:600; line-height:1.15; max-width:22ch; margin-top:14px; }
+  .hero .dek{ margin-top:18px; font-size:16.5px; color:var(--ink-soft); max-width:64ch; line-height:1.7; }
+  .tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+  .tag{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; border:1px solid var(--border); padding:5px 11px; border-radius:100px; color:var(--ink-soft); }
+
+  section{ padding:64px 0; border-bottom:1px solid var(--border); }
+  .section-label{ display:flex; align-items:baseline; gap:14px; margin-bottom:28px; }
+  .section-label .idx{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink-faint); }
+  .section-label h2{ font-size:24px; font-weight:600; }
+
+  .stat-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:16px; overflow:hidden; margin-top:12px; }
+  @media (max-width:760px){ .stat-grid{ grid-template-columns:repeat(2, 1fr); } }
+  .stat-cell{ background:var(--bg); padding:24px; }
+  .stat-cell .k{ font-family:'IBM Plex Mono', monospace; font-size:11px; text-transform:uppercase; color:var(--ink-faint); }
+  .stat-cell .v{ font-size:18px; font-weight:600; margin-top:6px; color:var(--gold); }
+
+  .prose p{ font-size:15.5px; line-height:1.75; color:var(--ink-soft); margin:0 0 16px; max-width:70ch; }
+  .prose strong{ color:var(--ink); font-weight:500; }
+
+  .panel{ background:var(--bg-panel); border:1px solid var(--border); border-radius:16px; padding:28px; margin-top:20px; }
+  .panel h3{ font-size:18px; font-weight:600; margin-bottom:10px; }
+  .panel p{ font-size:14.5px; line-height:1.7; color:var(--ink-soft); margin:0; }
+
+  footer{ padding:64px 0; text-align:center; }
+  footer h2{ font-size:clamp(26px, 4vw, 38px); font-weight:600; max-width:18ch; margin:0 auto; }
+  footer .sub{ color:var(--ink-soft); font-size:15px; margin:14px auto 28px; max-width:42ch; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:100px;
+    font-size:14px; font-weight:500; text-decoration:none; background:var(--accent); color:var(--accent-ink);
+  }
+  .fine{ margin-top:40px; font-size:12px; color:var(--ink-faint); font-family:'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="nav-inner">
+    <a class="wordmark" href="../index.html">Anika Agrawal</a>
+    <a class="back-link" href="../index.html#work">&larr; Back to portfolio</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Client Case Study &middot; Lead Generation</span>
+    <h1>Design Manifesto: Getting 22 High-Quality Leads on a Small Budget</h1>
+    <p class="dek">How I fixed a broken Instagram profile that was killing trust, structured a focused Meta Ads campaign, and generated 22 high-quality leads for high-ticket packages in just 7 days.</p>
+    <div class="tags">
+      <span class="tag">Meta Ads</span>
+      <span class="tag">Profile Optimization</span>
+      <span class="tag">Lead Generation</span>
+      <span class="tag">Client Project</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="section-label"><span class="idx">01</span><h2>The Campaign Numbers</h2></div>
+    <div class="prose">
+      <p>When running ads for service agencies, efficiency matters. Here is the exact performance breakdown from the 7-day campaign run:</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-cell"><div class="k">Total Spend</div><div class="v">₹1,782.47</div></div>
+      <div class="stat-cell"><div class="k">Quality Leads</div><div class="v">22 Leads</div></div>
+      <div class="stat-cell"><div class="k">Cost Per Lead</div><div class="v">₹81.02</div></div>
+      <div class="stat-cell"><div class="k">Duration</div><div class="v">7 Days</div></div>
+    </div>
+    <p style="margin-top:20px; font-size:14px; color:var(--ink-faint);">*Context check: Design Manifesto sells high-ticket packages priced at ₹9,999, ₹14,999, and ₹24,999. Securing 22 qualified leads in this budget is a strong return on ad spend.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label"><span class="idx">02</span><h2>Step 1: Fixing the Trust Deficit Before Spending a Rupee</h2></div>
+    <div class="prose">
+      <p>Before launching any ads, I audited the client's Instagram profile (<strong>_design_manifesto</strong>). Previously, they had run ads, but people were hesitant to convert because the profile itself had major credibility gaps:</p>
+      <p><strong>What was broken:</strong> A literal typo in the bio ("Offficial"), incorrect business category, an irrelevant personal YouTube channel link cluttering the bio, and zero proper story highlights.</p>
+      <p><strong>What I fixed:</strong> I overhauled the entire profile structure. Cleaned up the bio copy, set the right category, organized professional highlights (<em>Why choose us</em>, <em>Real results</em>, <em>Our approach</em>, <em>The problem</em>), gave the aesthetics a coherent look, and synced WhatsApp with automated greeting and away messages to ensure a smooth, trustworthy handover when prospects clicked through.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label"><span class="idx">03</span><h2>Step 2: Campaign Structure &amp; Execution</h2></div>
+    <div class="prose">
+      <p>Instead of overcomplicating things with multiple confusing ad sets, I kept the setup lean and data-driven:</p>
+    </div>
+    <div class="panel">
+      <h3>Lean Setup Strategy</h3>
+      <p>We set up <strong>1 campaign, 1 ad set, and 2 ad creatives</strong>. By the end of Day 3, I noticed that the first ad was underperforming and burning budget without traction, so I turned it off immediately. The second ad carried the entire remainder of the campaign, driving all 22 high-quality conversations smoothly.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2>Want practical ad execution that actually brings results?</h2>
+    <p class="sub">No fluff, no complex jargon—just clean profile optimization and high-converting Meta campaigns.</p>
+    <a class="btn" href="mailto:anikaagrawal073@gmail.com">anikaagrawal073@gmail.com</a>
+    <p class="fine">Anika Agrawal &middot; Case Study &middot; Design Manifesto &middot; 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
