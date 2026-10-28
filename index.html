@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <title>Anika Agrawal</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,680&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
@@ -169,11 +173,14 @@
   .pin-cta:hover{ transform:translateY(-2px) scale(1.02); }
   @media (max-width:560px){ .pin-cta{ right:14px; bottom:14px; padding:11px 16px; font-size:12.5px; } }
 </style>
+</head>
+<body>
 
 <nav class="top" id="topnav">
   <div class="nav-inner">
     <a class="wordmark" href="#top">Anika Agrawal</a>
     <div class="nav-links">
+      <a href="certifications.html">Certifications</a>
       <a href="#work">Work</a>
       <a href="#services">Services</a>
       <a href="#about">About</a>
@@ -203,9 +210,37 @@
   </div>
 </div>
 
+<section id="services">
+  <div class="wrap">
+    <div class="section-label reveal"><span class="idx">01</span><h2>What I do</h2></div>
+    <div class="services reveal">
+      <div class="svc"><span class="num">01</span><h3>Meta Ads</h3><p>Campaign setup, audience targeting, creative testing and weekly reporting for small business &amp; D2C accounts.</p></div>
+      <div class="svc"><span class="num">02</span><h3>Google Ads</h3><p>Search campaigns that show up when people are already looking for what you sell.</p></div>
+      <div class="svc"><span class="num">03</span><h3>ChatGPT Ads</h3><p>Advertising inside ChatGPT &mdash; brand new in India, and I'm learning it hands-on from the week it opened.</p></div>
+      <div class="svc"><span class="num">04</span><h3>Web Development</h3><p>Fast, clean one-page and small business sites &mdash; built, deployed, and handed over.</p></div>
+      <div class="svc"><span class="num">05</span><h3>Presentation Design</h3><p>Pitch decks and sales decks built to make the argument, not just look nice.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Section Preview (Placed directly below What I do) -->
+<section id="certifications-preview" style="padding: 88px 0; border-bottom: 1px solid var(--border);">
+  <div class="wrap">
+    <div class="section-label reveal"><span class="idx">01.5</span><h2>Certifications</h2></div>
+    <div class="reveal" style="background-color: var(--bg-panel); border: 1px solid var(--border); border-radius: 18px; padding: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; transition: border-color .25s ease;">
+      <div>
+        <span class="eyebrow" style="margin-bottom: 10px; display: block;">Meta Blueprint &bull; Professional Series</span>
+        <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 10px;">Meta Social Media Marketing Professional Certifications</h3>
+        <p style="color: var(--ink-soft); font-size: 15px; margin: 0; max-width: 48ch; line-height: 1.6;">Collection of 4 verified paid certificates covering social media strategy, management, and ad campaigns.</p>
+      </div>
+      <a href="certifications.html" class="btn primary" style="white-space: nowrap;">View All 4 Certificates &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <section id="work">
   <div class="wrap">
-    <div class="section-label reveal"><span class="idx">01</span><h2>Work</h2></div>
+    <div class="section-label reveal"><span class="idx">02</span><h2>Work</h2></div>
 
     <a href="case-studies/design-manifesto.html" class="case-card reveal" style="text-decoration:none; display:grid; cursor:pointer;">
       <div>
@@ -226,19 +261,6 @@
         <li><strong>Audience Targeting:</strong> NCR Business Owners (Top 10%–20% Income Filter)</li>
       </ul>
     </a>
-  </div>
-</section>
-
-<section id="services">
-  <div class="wrap">
-    <div class="section-label reveal"><span class="idx">02</span><h2>What I do</h2></div>
-    <div class="services reveal">
-      <div class="svc"><span class="num">01</span><h3>Meta Ads</h3><p>Campaign setup, audience targeting, creative testing and weekly reporting for small business &amp; D2C accounts.</p></div>
-      <div class="svc"><span class="num">02</span><h3>Google Ads</h3><p>Search campaigns that show up when people are already looking for what you sell.</p></div>
-      <div class="svc"><span class="num">03</span><h3>ChatGPT Ads</h3><p>Advertising inside ChatGPT &mdash; brand new in India, and I'm learning it hands-on from the week it opened.</p></div>
-      <div class="svc"><span class="num">04</span><h3>Web Development</h3><p>Fast, clean one-page and small business sites &mdash; built, deployed, and handed over.</p></div>
-      <div class="svc"><span class="num">05</span><h3>Presentation Design</h3><p>Pitch decks and sales decks built to make the argument, not just look nice.</p></div>
-    </div>
   </div>
 </section>
 
@@ -296,3 +318,6 @@
     revealEls.forEach(el => el.classList.add('in-view'));
   }
 </script>
+
+</body>
+</html>
