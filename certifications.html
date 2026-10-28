@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meta Blueprint Certifications | Anika Agrawal</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
         :root {
             --bg: #101113;
             --bg-panel: #17181B;
-            --ink: #F5F1EB;
+            --ink: #F5F1E8;
             --ink-soft: #A7A79C;
             --border: #26272B;
-            --accent: #58a6ff;
+            --accent: #3E93FF;
+            --accent-ink: #08090B;
+            --gold: #E8B450;
         }
 
         * {
@@ -23,15 +25,15 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'IBM Plex Sans', sans-serif;
             background-color: var(--bg);
             color: var(--ink);
             line-height: 1.6;
-            padding: 40px 20px;
+            padding: 40px 24px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -40,8 +42,9 @@
             color: var(--ink-soft);
             text-decoration: none;
             margin-bottom: 32px;
-            font-size: 0.9rem;
+            font-size: 14px;
             transition: color 0.2s;
+            font-family: 'IBM Plex Mono', monospace;
         }
 
         .back-link:hover {
@@ -49,157 +52,128 @@
         }
 
         header {
-            margin-bottom: 40px;
+            margin-bottom: 48px;
             border-bottom: 1px solid var(--border);
             padding-bottom: 24px;
         }
 
         header h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
+            font-family: 'Fraunces', serif;
+            font-size: 36px;
+            font-weight: 600;
             margin-bottom: 8px;
         }
 
         header p {
             color: var(--ink-soft);
-            font-size: 1.05rem;
+            font-size: 16px;
         }
 
-        .cert-list {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
+        /* 2-Column Grid for Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
         }
 
-        .cert-item {
+        @media (max-width: 768px) {
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cert-card {
             background-color: var(--bg-panel);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 18px;
             padding: 24px;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: space-between;
-            gap: 24px;
-            text-decoration: none;
-            color: inherit;
-            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            transition: border-color 0.25s ease, transform 0.25s ease;
         }
 
-        .cert-item:hover {
-            transform: translateY(-2px);
+        .cert-card:hover {
             border-color: var(--accent);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
         }
 
-        .cert-preview {
-            width: 120px;
-            height: 90px;
-            object-fit: cover;
-            border-radius: 6px;
+        .cert-image-container {
+            width: 100%;
+            height: 320px;
+            background-color: #0f1012;
             border: 1px solid var(--border);
-            flex-shrink: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .cert-info {
-            flex-grow: 1;
+        .cert-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Shows full certificate image clearly */
         }
 
-        .cert-info h3 {
-            font-size: 1.15rem;
-            margin-bottom: 6px;
+        .cert-content h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
             color: var(--ink);
         }
 
         .cert-meta {
-            font-size: 0.85rem;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px;
             color: var(--ink-soft);
+            margin-bottom: 20px;
         }
 
         .verify-btn {
-            background-color: rgba(88, 166, 255, 0.1);
-            color: var(--accent);
-            padding: 10px 16px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            white-space: nowrap;
-            border: 1px solid rgba(88, 166, 255, 0.2);
-            transition: background-color 0.2s;
-        }
-
-        .cert-item:hover .verify-btn {
+            display: block;
+            text-align: center;
             background-color: var(--accent);
-            color: #fff;
+            color: var(--accent-ink);
+            padding: 12px 20px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
         }
 
-        @media (max-width: 768px) {
-            .cert-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .cert-preview {
-                width: 100%;
-                height: auto;
-                max-height: 200px;
-            }
-            .verify-btn {
-                width: 100%;
-                text-align: center;
-            }
+        .verify-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -8px rgba(62,147,255,.55);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Since it's in the root, back-link points directly to index.html -->
-        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
         
         <header>
             <h1>Meta Blueprint Certifications</h1>
             <p>Paid professional course certifications verified through Coursera.</p>
         </header>
 
-        <div class="cert-list">
-            <!-- Cert 1 -->
-            <a href="https://coursera.org/verify/2EGH1Z92YMTC" target="_blank" rel="noopener noreferrer" class="cert-item">
-                <img src="cert-1.png" alt="Introduction to Social Media Marketing Certificate" class="cert-preview">
-                <div class="cert-info">
-                    <h3>Introduction to Social Media Marketing</h3>
-                    <div class="cert-meta">Meta • Issued Aug 29, 2026</div>
+        <div class="cert-grid">
+            <!-- Certificate 1 -->
+            <div class="cert-card">
+                <div>
+                    <div class="cert-image-container">
+                        <img src="cert-1.png" alt="Introduction to Social Media Marketing">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Introduction to Social Media Marketing</h3>
+                        <div class="cert-meta">Meta &bull; Issued Aug 29, 2026[cite: 5]</div>
+                    </div>
                 </div>
-                <span class="verify-btn">Verify Certificate ↗</span>
-            </a>
+                <a href="https://coursera.org/verify/2EGH1Z92YMTC" target="_blank" rel="noopener noreferrer" class="verify-btn">Verify Certificate &rarr;</a>
+            </div>
 
-            <!-- Cert 2 -->
-            <a href="https://coursera.org/verify/4LOYLBFJB5I5" target="_blank" rel="noopener noreferrer" class="cert-item">
-                <img src="cert-2.png" alt="Social Media Management Certificate" class="cert-preview">
-                <div class="cert-info">
-                    <h3>Social Media Management</h3>
-                    <div class="cert-meta">Meta • Issued Sep 27, 2026</div>
-                </div>
-                <span class="verify-btn">Verify Certificate ↗</span>
-            </a>
-
-            <!-- Cert 3 -->
-            <a href="https://coursera.org/verify/V4QNKLH597XN" target="_blank" rel="noopener noreferrer" class="cert-item">
-                <img src="cert-3.png" alt="Fundamentals of Social Media Advertising Certificate" class="cert-preview">
-                <div class="cert-info">
-                    <h3>Fundamentals of Social Media Advertising</h3>
-                    <div class="cert-meta">Meta • Issued Oct 10, 2026</div>
-                </div>
-                <span class="verify-btn">Verify Certificate ↗</span>
-            </a>
-
-            <!-- Cert 4 -->
-            <a href="https://coursera.org/verify/VUALBCQ84WS5" target="_blank" rel="noopener noreferrer" class="cert-item">
-                <img src="cert-4.png" alt="Advertising with Meta Certificate" class="cert-preview">
-                <div class="cert-info">
-                    <h3>Advertising with Meta</h3>
-                    <div class="cert-meta">Meta • Issued Oct 24, 2026</div>
-                </div>
-                <span class="verify-btn">Verify Certificate ↗</span>
-            </a>
-        </div>
-    </div>
-</body>
-</html>
+            <!-- Certificate 2 -->
+            <div class="cert-
